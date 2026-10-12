@@ -1,0 +1,121 @@
+# ============================================================================
+# Agent / AI tooling
+# ============================================================================
+# Contexto local de agentes: não versionar. QWEN.md e AGENTS.md são
+# regenerated per-worktree e não descrevem o contrato do pipeline.
+.qwen/
+AGENTS.md
+QWEN.md
+CLAUDE.md
+.cursor/
+.aider*
+
+# ============================================================================
+# Dados e logs (gerados em tempo de execução)
+# ============================================================================
+# O banco DuckDB, os volumes extraídos, o ledger de resume e os arquivos de
+# quarentena/telemetria. Tudo reproduzível a partir de `python -m src`.
+/data/
+/logs/
+
+# Artefatos intermediários do manifest de run (data/manifest.json já cobre)
+manifest.json.tmp
+
+# ============================================================================
+# Segredos
+# ============================================================================
+# .env.example é versionado de propósito; só o .env real sai.
+/.env
+.env.*
+!.env.example
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ambientes virtuais
+.venv/
+.venv*/
+venv/
+env/
+ENV/
+.python-version
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.installed.cfg
+MANIFEST
+pip-log.txt
+
+# Testes e cobertura
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+cover/
+nosetests.xml
+.hypothesis/
+
+# Type checkers e linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pyre/
+.pytype/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ============================================================================
+# Sistema operacional
+# ============================================================================
+# Ruído do Windows Explorer / OneDrive, que cria thumbs.db e ini em toda pasta.
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS / Linux
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.fuse_hidden*
+
+# ============================================================================
+# Editores e IDEs
+# ============================================================================
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# LSP
+pyrightconfig.json
+
+# Spyder / Rope
+.spyderproject
+.spyproject
+.ropeproject

@@ -1,0 +1,48 @@
+[project]
+name = "etl-cnpj"
+version = "0.1.0"
+description = "Pipeline de ETL dos dados abertos de CNPJ da Receita Federal para DuckDB"
+authors = [
+    {name = "Dan Alec",email = "danalec@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas==2.3.3",
+    "duckdb==1.5.6",
+    "pydantic-settings==2.14.2",
+    "tqdm==4.66.4",
+    "requests==2.33.0",
+    "beautifulsoup4==4.12.3",
+    "pandera[io]==0.20.3",
+    "charset-normalizer==3.3.2",
+    "tenacity==8.2.3",
+    "aiofiles==23.2.1",
+    "curl_cffi==0.15.0"
+]
+
+# Packaging configuration removed; this project is app-oriented and not distributing a package.
+
+# As versões são pinadas, e não intervalos, de propósito: requirements.txt é o
+# que o CI e o Dockerfile instalam, e um `poetry install` que resolvesse outra
+# faixa testaria um código diferente do que roda em produção. As duas entradas
+# precisam continuar em sincronia.
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "black",
+    "mypy",
+    "pytest-asyncio",
+    "types-requests",
+    "types-aiofiles",
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]

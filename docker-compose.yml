@@ -1,0 +1,15 @@
+# DuckDB is embedded: the whole database is one file on disk. There is no server
+# service, no port and no credentials. The only volume is the data directory.
+
+services:
+  app:
+    build: .
+    container_name: etl-cnpj
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      DUCKDB_PATH: /app/data/cnpj.duckdb
+    command: ["python","-m","src"]

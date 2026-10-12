@@ -1,0 +1,35 @@
+.git
+.gitignore
+.github
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.coverage
+coverage.xml
+htmlcov
+# Ambientes virtuais: tasks.ps1 ci cria .venv310, e o Dockerfile faz COPY . .
+.venv
+.venv*/
+venv/
+env/
+.env
+.env.*
+!.env.example
+data
+logs
+dist
+build
+*.egg-info
+*.ipynb
+*.log
+*.duckdb
+*.wal
+# Contexto local de agentes nao pertence a imagem
+AGENTS.md
+QWEN.md
+CLAUDE.md
+.qwen/
+.cursor/
